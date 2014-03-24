@@ -30,7 +30,7 @@ case $1 in
             touch $TODO_DIR/"$2"
         fi
         ;;
-    "help")
+    *)
         echo "
         count_done         show the count of done tasks
         count_undone       show the count of undone tasks
