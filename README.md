@@ -8,6 +8,6 @@ Usage
 
 screenshots
 ======
-![todo.png](https://raw.githubusercontent.com/Zuckonit/todo.sh/master/todo.png)
+![todo.png](https://raw.githubusercontent.com/Zuckonit/todo.sh/master/.screenshots/todo.png)
 
 
