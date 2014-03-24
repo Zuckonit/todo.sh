@@ -8,6 +8,11 @@ Usage
 
 screenshots
 ======
-![todo.png](https://raw.githubusercontent.com/Zuckonit/todo.sh/master/.screenshots/todo.png)
+> ![todo.png](https://raw.githubusercontent.com/Zuckonit/todo.sh/master/.screenshots/todo.png)
+
+
+issues for conky
+======
+> if the special symbol '√' is not be displayed, please configure the font of related conkyrc
 
 
