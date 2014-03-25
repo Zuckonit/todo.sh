@@ -24,7 +24,7 @@ case $1 in
         ;;
     "new")
         ls $TODO_DIR | grep -iE "^$2$" 
-        if [ $? -ne 0 ];then
+        if [ $? -eq 0 ];then
             echo "task alreay existed"
         else
             touch $TODO_DIR/"$2"
