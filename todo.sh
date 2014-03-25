@@ -15,7 +15,7 @@ case $1 in
         ls $TODO_DIR | grep -vE "^\[√" |  wc -l
         ;;
     "done")
-        ls $TODO_DIR | grep -E "^$2$" 
+        ls $TODO_DIR | grep -E "^$2$" &> /dev/null
         if [ $? -ne 0 ];then
             echo "no such task"
         else
@@ -23,11 +23,23 @@ case $1 in
         fi
         ;;
     "new")
-        ls $TODO_DIR | grep -iE "^$2$" 
+        ls $TODO_DIR | grep -iE "^$2$" &> /dev/null
         if [ $? -eq 0 ];then
             echo "task alreay existed"
         else
             touch $TODO_DIR/"$2"
+        fi
+        ;;
+    "remove")
+        ls $TODO_DIR | grep -iE "^$2$" &> /dev/null
+        if [ $? -ne 0 ];then
+            echo "no such task"
+        else
+            if [ "$3"x = "-f"x ]; then
+                rm -f $TODO_DIR/"$2"
+            else
+                rm -i $TODO_DIR/"$2"
+            fi
         fi
         ;;
     *)
@@ -36,6 +48,7 @@ case $1 in
         count_undone       show the count of undone tasks
         done  [task_name]  mark the special task as done 
         list  [count]      show the tasks of special count, count is optional
-        new   [task_name]  create a task with special name"
+        new   [task_name]  create a task with special name
+        remove [task_name] [-f]  remove the special task, -f is optional, which means force without prompt"
         ;;
 esac
