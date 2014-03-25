@@ -1,7 +1,7 @@
 #!/bin/bash
 
 TODO_DIR=$HOME/.vim-airline-todo  #you can set your own todo directory
-[ ! -d $TODO_DIR ] && mkdir $TODO_DIR
+[ ! -d $TODO_DIR ] && mkdir -p $TODO_DIR
 
 
 case $1 in
